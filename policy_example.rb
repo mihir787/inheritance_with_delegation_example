@@ -1,4 +1,4 @@
-class Policy < Hash
+class Policy
   attr_reader :name
 
   def initialize(name)
