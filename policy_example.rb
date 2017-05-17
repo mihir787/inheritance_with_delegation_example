@@ -1,13 +1,15 @@
+require 'forwardable'
+
 class Policy
+  extend Forwardable
+
+  def_delegators :@rules, :[]
+
   attr_reader :name
 
   def initialize(name)
     @name = name
     @rules = {}
-  end
-
-  def [](key)
-    @rules[key]
   end
 
   def <<(rule)
