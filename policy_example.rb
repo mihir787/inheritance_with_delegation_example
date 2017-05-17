@@ -3,7 +3,11 @@ class Policy < Hash
 
   def initialize(name)
     @name = name
-    @rules = self
+    @rules = {}
+  end
+
+  def [](key)
+    @rules[key]
   end
 
   def <<(rule)
